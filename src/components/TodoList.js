@@ -21,12 +21,13 @@ class ParentComponent extends Component {
        todoList.push(this.state.newTodo);
         this.setState({newTodo: '', todos: todoList});
     }
-
+    
     render() {
-        return (
+      
+    return (
             <div>
-                {this.state.todos.map(todo => <ChildComponent thing={todo} />)}
-                <form onSubmit={this.addTodo}>
+                {this.state.todos.map(todo => <ul className="List"> ChildComponent thing={todo} </ul>)}
+                <form id="container" onSubmit={this.addTodo}>
                     <input type="text" onChange={this.handleIngredientInput} placeholder="Add a new todo" value={this.state.newTodo} />
                 </form>
             </div>
